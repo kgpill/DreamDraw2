@@ -224,53 +224,67 @@ body {
 
 /* 반응형 디자인 */
 @media screen and (max-width: 768px) {
-    .screen {
-        width: 90%; /* 화면 너비에 맞춤 */
+    .calendar-wrapper {
+        max-width: 90%; /* 화면 너비에 맞춤 */
+        margin: 10px;
     }
 
-    .overlap-group {
-        padding: 10px;
-        height: auto;
+    .calendar-header {
+        font-size: 16px;
+        padding: 8px;
     }
 
-    .image-box {
-        max-width: 300px; /* 이미지 박스 축소 */
+    .calendar-table thead th {
+        font-size: 12px;
+        padding: 5px;
     }
 
-    .details {
-        padding: 10px;
+    .calendar-table tbody td {
+        height: 30px;
+        font-size: 10px;
     }
 
-    .date-overlay {
-        font-size: 14px;
-        top: -30px;
-        left: 5px;
+    .calendar-table tbody td span {
+        font-size: 10px;
     }
 
-    .button-wrapper {
-        top: -30px;
-        gap: 5px;
+    .calendar-table tbody td .circle {
+        width: 8px;
+        height: 8px;
     }
 
-    .close-button,
-    .download-button,
-    .upload-button {
-        width: 25px; /* 버튼 크기 축소 */
+    .profile img {
+        width: 25px;
         height: 25px;
     }
 }
 
 @media screen and (max-width: 480px) {
-    .image-box {
-        max-width: 250px;
+    .calendar-wrapper {
+        max-width: 100%; /* 화면을 꽉 채움 */
+        margin: 5px;
     }
 
-    .details {
-        padding: 8px;
-        font-size: 12px;
+    .calendar-header {
+        font-size: 14px;
     }
 
-    .date-overlay {
-        font-size: 12px;
+    .calendar-table tbody td {
+        height: 25px;
+        font-size: 8px;
+    }
+
+    .calendar-table tbody td span {
+        font-size: 8px;
+    }
+
+    .calendar-table tbody td .circle {
+        width: 6px;
+        height: 6px;
+    }
+
+    .profile img {
+        width: 20px;
+        height: 20px;
     }
 }
