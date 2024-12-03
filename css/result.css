@@ -234,3 +234,18 @@ body {
     margin-bottom: 8px; /* 항목 간 여백 */
 }
 
+
+/* 반응형 디자인 */
+@media screen and (max-width: 1170px) {
+    .screen {
+        width: 90%;
+    }
+
+    .image-box {
+        max-width: 100%;
+    }
+
+    .overlap {
+        padding: 0 5px;
+    }
+}
