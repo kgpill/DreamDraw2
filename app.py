@@ -285,7 +285,7 @@ def get_dream_result(userName, year, month, day):
             return "Session data not found", 404
         
         return render_template(
-        'myDreamdraw_result.html',
+        'myDreamDraw_result.html',
         userName=userName,
         imgPath=dream_data["imgPath"],  # URL 경로가 이미 준비됨
         dreamCharacter=dream_data["dreamCharacter"],
