@@ -165,3 +165,107 @@ body {
     transform: scale(1.1);
     transition: transform 0.2s;
 }
+
+/* 반응형 디자인 */
+@media screen and (max-width: 768px) {
+    /* 캘린더 전체 컨테이너 */
+    .calendar-wrapper {
+        max-width: 90%; /* 화면 너비에 맞춤 */
+        margin: 20px auto; /* 중앙 정렬 */
+        padding: 10px; /* 여백 추가 */
+    }
+
+    /* 캘린더 헤더 */
+    .calendar-header {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    /* 캘린더 테이블 */
+    .calendar-table thead th {
+        font-size: 12px; /* 텍스트 크기 축소 */
+        padding: 8px;
+    }
+
+    .calendar-table tbody td {
+        height: 40px; /* 셀 높이 축소 */
+    }
+
+    .calendar-table tbody td span {
+        font-size: 12px; /* 텍스트 크기 축소 */
+    }
+
+    .calendar-table tbody td .circle {
+        width: 10px; /* 색상 원 크기 축소 */
+        height: 10px;
+    }
+
+    /* 네비게이션 바 */
+    .sidebar {
+        width: 60px; /* 모바일에서 네비게이션 바 축소 */
+        height: 100vh; /* 전체 높이 유지 */
+        position: fixed; /* 항상 왼쪽에 고정 */
+        top: 0;
+        left: 0;
+        padding: 10px 0;
+    }
+
+    .menu-item img {
+        width: 24px; /* 아이콘 크기 축소 */
+        height: 24px;
+    }
+
+    .menu-item span {
+        font-size: 12px; /* 텍스트 크기 축소 */
+    }
+
+    /* 프로필 아이콘 */
+    .profile img {
+        width: 30px; /* 크기 축소 */
+        height: 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* 캘린더 전체 컨테이너 */
+    .calendar-wrapper {
+        max-width: 100%; /* 화면 꽉 채우기 */
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    /* 캘린더 테이블 */
+    .calendar-table tbody td {
+        height: 30px; /* 셀 높이 더 축소 */
+    }
+
+    .calendar-table tbody td span {
+        font-size: 10px; /* 텍스트 크기 더 축소 */
+    }
+
+    .calendar-table tbody td .circle {
+        width: 8px; /* 색상 원 크기 더 축소 */
+        height: 8px;
+    }
+
+    /* 네비게이션 바 */
+    .sidebar {
+        width: 50px; /* 너비 더 축소 */
+    }
+
+    .menu-item img {
+        width: 20px; /* 아이콘 크기 더 축소 */
+        height: 20px;
+    }
+
+    .menu-item span {
+        font-size: 10px; /* 텍스트 크기 더 축소 */
+    }
+
+    /* 프로필 아이콘 */
+    .profile img {
+        width: 25px; /* 크기 더 축소 */
+        height: 25px;
+    }
+}
+
