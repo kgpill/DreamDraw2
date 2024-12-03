@@ -1,11 +1,9 @@
-/* 전체 레이아웃 */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #ffffff;
 }
 
-/* 캘린더 전체 컨테이너 */
 .calendar-wrapper {
     max-width: 800px;
     margin: 50px auto;
@@ -16,7 +14,6 @@ body {
     overflow: hidden;
 }
 
-/* 네비게이션 바 */
 .sidebar {
     position: absolute;
     top: 0;
@@ -32,8 +29,6 @@ body {
     cursor: pointer;
 }
 
-
-/* 캘린더 헤더 */
 .calendar-header {
     text-align: center;
     padding: 20px;
@@ -42,7 +37,6 @@ body {
     border-bottom: 1px solid #eaeaea;
 }
 
-/* 캘린더 테이블 */
 .calendar-table {
     width: 100%;
     border-collapse: collapse;
@@ -68,36 +62,26 @@ body {
     vertical-align: top;
 }
 
-/* 날짜 텍스트 */
 .calendar-table tbody td span {
     display: block;
     font-size: 14px;
     margin-bottom: 5px;
 }
 
-/* 색상 원 */
 .calendar-table tbody td .circle {
     width: 16px;
     height: 16px;
     border-radius: 50%;
     margin: 0 auto;
-    background-color: transparent; /* 초기 상태는 투명 */
+    background-color: transparent;
     transition: background-color 0.3s ease;
 }
 
-/* 색상 원의 null 상태 */
-.calendar-table tbody td .circle[data-color="null"] {
-    pointer-events: none;
-    opacity: 0.3;
-}
-
-/* 비어 있는 셀 */
 .calendar-table tbody td.empty {
     background-color: #f9f9f9;
     pointer-events: none;
 }
 
-/* 프로필 아이콘 */
 .profile {
     position: absolute;
     top: 20px;
@@ -142,26 +126,39 @@ body {
     background-color: #e0e0e0;
 }
 
-/* 선택된 날짜 효과 */
 .calendar-table tbody td.selected {
     background-color: #f0f8ff;
     border: 1px solid #007bff;
 }
 
-/* 활성 날짜 효과 */
 .calendar-table tbody td.active .circle {
     border: 2px solid #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
     cursor: pointer;
 }
 
-/* 비활성 날짜 */
-.calendar-table tbody td .circle[data-color="null"] {
-    background-color: #e9ecef;
-    pointer-events: none;
-}
-
 .calendar-table tbody td .circle:hover {
     transform: scale(1.1);
     transition: transform 0.2s;
+}
+
+/* 반응형 디자인 */
+@media screen and (max-width: 1170px) {
+    .calendar-wrapper {
+        margin: 20px;
+        max-width: 100%;
+    }
+
+    .calendar-header {
+        font-size: 16px;
+    }
+
+    .calendar-table tbody td {
+        height: 60px;
+    }
+
+    .calendar-table tbody td .circle {
+        width: 12px;
+        height: 12px;
+    }
 }
