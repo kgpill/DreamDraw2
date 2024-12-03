@@ -50,6 +50,40 @@
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-50px); }
         }
+
+        /* 반응형 디자인 */
+    @media screen and (max-width: 768px) {
+        .cloud {
+            width: 250px; /* 모바일에서 구름 크기 축소 */
+            height: 125px;
+        }
+
+        .cloud span {
+            font-size: 24px; /* 글자 크기 축소 */
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .cloud {
+            width: 200px; /* 작은 화면에서 구름 크기 더 축소 */
+            height: 100px;
+        }
+
+        .cloud span {
+            font-size: 18px; /* 글자 크기 더 축소 */
+        }
+    }
+
+    @media screen and (max-width: 320px) {
+        .cloud {
+            width: 150px; /* 매우 작은 화면에서 구름 크기 최소화 */
+            height: 75px;
+        }
+
+        .cloud span {
+            font-size: 14px; /* 글자 크기 최소화 */
+        }
+    }
     </style>
     
     
