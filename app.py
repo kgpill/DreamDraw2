@@ -371,6 +371,12 @@ def save_dream(userName, year, month, day):
         user_folder = os.path.join(BASE_DIR, userName)
         new_image_path = os.path.join(user_folder, image_name)
 
+        # 디버깅용 경로 출력
+        print(f"BASE_DIR: {BASE_DIR}")
+        print(f"STATIC_FOLDER: {STATIC_FOLDER}")
+        print(f"Old image path: {old_image_path}")
+        print(f"New image path: {new_image_path}")
+
         # 이미지 파일 이동
         if not os.path.exists(old_image_path):
             return jsonify({"error": "Image not found"}), 404
