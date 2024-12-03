@@ -278,3 +278,19 @@ button:disabled {
     text-align: center;
     margin: 0;
 }
+
+/* 반응형 디자인 */
+@media screen and (max-width: 1170px) {
+    .sidebar {
+        width: 50px;
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    .popup {
+        width: 90%;
+        padding: 15px;
+    }
+}
