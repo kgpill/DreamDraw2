@@ -167,38 +167,19 @@ body {
 }
 
 /* 반응형 디자인 */
-@media screen and (max-width: 1170px) {
-    .calendar-wrapper {
-        max-width: 100%;
-        margin: 20px;
-    }
-
-    .calendar-header {
-        font-size: 16px;
-    }
-
-    .calendar-table tbody td {
-        height: 60px;
-    }
-
-    .calendar-table tbody td span {
-        font-size: 12px;
-    }
-
-    .calendar-table tbody td .circle {
-        width: 12px;
-        height: 12px;
-    }
-}
-
 @media screen and (max-width: 768px) {
+    .calendar-wrapper {
+        max-width: 90%; /* 화면 폭에 맞게 조정 */
+        margin: 10px auto;
+    }
+
     .calendar-header {
-        font-size: 14px;
-        padding: 10px;
+        font-size: 14px; /* 더 작은 폰트 */
+        padding: 8px;
     }
 
     .calendar-table tbody td {
-        height: 50px;
+        height: 40px; /* 셀 높이 축소 */
     }
 
     .calendar-table tbody td span {
@@ -206,7 +187,31 @@ body {
     }
 
     .calendar-table tbody td .circle {
-        width: 10px;
-        height: 10px;
+        width: 8px; /* 원 크기 축소 */
+        height: 8px;
+    }
+
+    .profile img {
+        width: 25px; /* 프로필 아이콘 크기 축소 */
+        height: 25px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .calendar-header {
+        font-size: 12px; /* 더 작은 폰트 */
+    }
+
+    .calendar-table tbody td {
+        height: 35px; /* 셀 높이 더 축소 */
+    }
+
+    .calendar-table tbody td span {
+        font-size: 9px;
+    }
+
+    .calendar-table tbody td .circle {
+        width: 6px; /* 원 크기 더 축소 */
+        height: 6px;
     }
 }
