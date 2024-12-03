@@ -33,3 +33,11 @@ wsproto==1.2.0
 yarl==1.9.2
 flask-cors==4.0.1
 pyyaml==6.0.2
+Flask==2.3.2
+Flask-MySQLdb==0.2.0
+mysqlclient==2.1.1
+python-dotenv==1.0.0
+Pillow==10.0.1
+requests==2.31.0
+deep-translator==1.10.1
+openai==0.27.7
