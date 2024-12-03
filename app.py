@@ -363,39 +363,37 @@ def save_dream(userName, year, month, day):
         act = data.get("act", "")
         date = data.get("date", "")
 
-        # 기존 이미지 경로
+        # 이미지 경로 설정
         image_name = f"{userName}_{year}{month}{day}.png"
         old_image_path = os.path.join(STATIC_FOLDER, image_name)
-
-        # 유저 디렉토리 경로
-        user_folder = os.path.join(BASE_DIR, userName)
+        
+        # 유저 폴더 경로
+        user_folder = os.path.join(BASE_DIR, userName)  # 루트 디렉토리 기준 유저 폴더
         new_image_path = os.path.join(user_folder, image_name)
-
+        
         # 디버깅용 경로 출력
         print(f"BASE_DIR: {BASE_DIR}")
         print(f"STATIC_FOLDER: {STATIC_FOLDER}")
         print(f"Old image path: {old_image_path}")
         print(f"New image path: {new_image_path}")
-
+        
         # 이미지 파일 이동
         if not os.path.exists(old_image_path):
+            print(f"Error: Image not found at {old_image_path}")
             return jsonify({"error": "Image not found"}), 404
-
+        
         try:
             # 유저 폴더가 없으면 생성
             if not os.path.exists(user_folder):
-                os.makedirs(user_folder)
+                os.makedirs(user_folder, exist_ok=True)  # 존재하지 않으면 생성
                 print(f"User folder created: {user_folder}")
-
+        
             # 이미지 파일 이동 (덮어쓰기 포함)
             if os.path.exists(new_image_path):
                 print(f"File already exists. Overwriting: {new_image_path}")
-            os.replace(old_image_path, new_image_path)  # 기존 파일 덮어쓰기
-            print(f"Image moved to {new_image_path}")
-        except OSError as e:
-            print(f"Error occurred while moving the file: {e}")
-            return jsonify({"error": f"File operation failed: {e}"}), 500
-        
+
+        os.replace(old_image_path, new_image_path)  # 파일 이동
+        print(f"Image moved to {new_image_path}")
         # 새로운 값 삽입
         imgPath = f"/{userName}/{userName}_{year}{month}{day}.png"
 
