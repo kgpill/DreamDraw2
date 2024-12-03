@@ -117,7 +117,7 @@ def signin():
         cursor.execute(insert_query, (userId, password, userName))
         mysql.connection.commit()
 
-        table_name = f"myDreamDiary_{userName}"
+        table_name = f"mydreamdiary_{userName}"
         create_table_query = f"""
         CREATE TABLE {table_name} (
             date DATE PRIMARY KEY NOT NULL,
