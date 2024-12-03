@@ -242,10 +242,14 @@ body {
     }
 
     .image-box {
-        max-width: 100%;
+        width: 100%;
+        height: auto;
     }
+}
 
-    .overlap {
-        padding: 0 5px;
+@media screen and (max-width: 768px) {
+    .image-box {
+        width: 100%;
+        height: auto;
     }
 }
