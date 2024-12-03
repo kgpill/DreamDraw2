@@ -102,6 +102,7 @@ body {
 @media screen and (max-width: 1170px) {
     .sidebar {
         width: 60px;
+        padding: 10px 0;
     }
 
     .menu-item img {
@@ -120,5 +121,24 @@ body {
     .popup {
         width: 90%;
         padding: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 50px;
+    }
+
+    .menu-item img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .menu-item span {
+        font-size: 10px;
+    }
+
+    .logo img {
+        width: 250px;
     }
 }
