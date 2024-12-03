@@ -170,8 +170,8 @@ body {
 @media screen and (max-width: 768px) {
     /* 캘린더 전체 컨테이너 */
     .calendar-wrapper {
-        max-width: 80%; /* 화면 너비에 맞춤 */
-        margin: 20px auto; /* 중앙 정렬 */
+        max-width: 70%; /* 캘린더 크기 더 축소 */
+        margin: 80px auto; /* 중앙 배치, 더 아래로 */
         padding: 10px; /* 여백 추가 */
     }
 
@@ -192,7 +192,7 @@ body {
     }
 
     .calendar-table tbody td {
-        height: 35px; /* 셀 높이 축소 */
+        height: 30px; /* 셀 높이 더 축소 */
     }
 
     .calendar-table tbody td span {
@@ -241,8 +241,8 @@ body {
 @media screen and (max-width: 480px) {
     /* 캘린더 전체 컨테이너 */
     .calendar-wrapper {
-        max-width: 75%; /* 더 작게 축소 */
-        margin: 15px auto;
+        max-width: 65%; /* 더 작게 축소 */
+        margin: 100px auto; /* 캘린더를 더 아래로 중앙 정렬 */
     }
 
     /* 캘린더 헤더 */
@@ -252,7 +252,7 @@ body {
 
     /* 캘린더 테이블 */
     .calendar-table tbody td {
-        height: 30px; /* 셀 높이 더 축소 */
+        height: 25px; /* 셀 높이 더 축소 */
     }
 
     .calendar-table tbody td span {
@@ -284,4 +284,5 @@ body {
         height: 20px;
     }
 }
+
 
