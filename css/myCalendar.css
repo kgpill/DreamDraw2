@@ -226,17 +226,76 @@ body {
 @media screen and (max-width: 768px) {
     .calendar-wrapper {
         max-width: 90%; /* 화면 너비에 맞춤 */
-        margin: 10px;
+        margin: 10px auto; /* 가운데 정렬 */
+        padding: 10px;
+        box-shadow: none;
+    }
+
+    .calendar-header {
+        font-size: 18px; /* 글자 크기 유지 */
+        padding: 10px;
+        text-align: center;
+    }
+
+    .calendar-table {
+        margin: 0 auto; /* 테이블 중앙 정렬 */
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    .calendar-table thead th {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .calendar-table tbody td {
+        height: 40px;
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .calendar-table tbody td span {
+        font-size: 12px;
+    }
+
+    .calendar-table tbody td .circle {
+        width: 10px;
+        height: 10px;
+    }
+
+    .sidebar {
+        width: 50px;
+        position: fixed;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+    }
+
+    .menu-item {
+        margin: 10px 0;
+    }
+
+    .menu-item img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .profile img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .calendar-wrapper {
+        max-width: 95%;
+        margin: 5px auto;
+        padding: 8px;
     }
 
     .calendar-header {
         font-size: 16px;
         padding: 8px;
-    }
-
-    .calendar-table thead th {
-        font-size: 12px;
-        padding: 5px;
     }
 
     .calendar-table tbody td {
@@ -253,34 +312,14 @@ body {
         height: 8px;
     }
 
-    .profile img {
-        width: 25px;
-        height: 25px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .calendar-wrapper {
-        max-width: 100%; /* 화면을 꽉 채움 */
-        margin: 5px;
+    .sidebar {
+        width: 40px;
+        left: 5px;
     }
 
-    .calendar-header {
-        font-size: 14px;
-    }
-
-    .calendar-table tbody td {
-        height: 25px;
-        font-size: 8px;
-    }
-
-    .calendar-table tbody td span {
-        font-size: 8px;
-    }
-
-    .calendar-table tbody td .circle {
-        width: 6px;
-        height: 6px;
+    .menu-item img {
+        width: 18px;
+        height: 18px;
     }
 
     .profile img {
