@@ -279,15 +279,19 @@ signInButton.addEventListener("click", async () => {
         if (response.redirected) {
             // SweetAlert2로 성공 팝업 띄우기
             Swal.fire({
-              icon: ' warning',
-              title: '로그아웃',
-              text: '홈으로 돌아갑니다.',
-              confirmButtonText: '확인',
-              customClass: {
-                  popup: 'swal-custom-popup'
-              }
-          });
-            window.location.href = response.url; // 성공 시 index.html로 이동
+                icon: 'warning',
+                title: '로그아웃',
+                text: '홈으로 돌아갑니다.',
+                confirmButtonText: '확인',
+                customClass: {
+                    popup: 'swal-custom-popup'
+                }
+            }).then((result) => {
+                // 확인 버튼을 눌렀을 때만 실행
+                if (result.isConfirmed) {
+                    window.location.href = response.url; // 성공 시 index.html로 이동
+                }
+            });
         } else {
             // SweetAlert2로 애러 팝업 띄우기
             Swal.fire({
