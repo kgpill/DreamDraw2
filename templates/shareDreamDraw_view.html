@@ -102,9 +102,7 @@
 
                 // 성공적으로 처리되면 리다이렉트
                 if (response.ok) {
-                    // 서버에서 제공한 URL로 이동
-                    window.location.href = "/";
-                    // SweetAlert2로 에러 팝업 띄우기
+                    // SweetAlert2로 경고 팝업 띄우기
                     Swal.fire({
                         icon: 'warning',
                         title: '취소되었습니다.',
@@ -112,6 +110,11 @@
                         confirmButtonText: '확인',
                         customClass: {
                             popup: 'swal-custom-popup'
+                        }
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // 확인 버튼 클릭 시 리디렉션
+                            window.location.href = "/";
                         }
                     });
                 } else {
