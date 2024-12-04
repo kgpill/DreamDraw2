@@ -191,7 +191,7 @@ def create_dream(userName, year, month, day):
         print("===== POST 요청 수신 =====")
         # 쿠키에서 userName 가져오기
         default_userName = request.cookies.get('userName')
-        userName = unquote(encoded_userName)
+        userName = unquote(default_userName)
         if not userName:
             return jsonify({"error": "No userName in cookies"}), 400
         print(f"userName: {userName}, year: {year}, month: {month}, day: {day}")
@@ -451,7 +451,7 @@ def get_monthly_calendar(year, month):
         month = int(month)
          # 쿠키에서 userName 가져오기
         default_userName = request.cookies.get('userName')
-        userName = unquote(encoded_userName)
+        userName = unquote(default_userName)
         if not userName:
             return jsonify({"error": "User is not logged in"}), 401
         table_name = f"mydreamdiary_{userName}"  # 유저별 테이블
@@ -511,7 +511,7 @@ def set_daily_dream(year, month, day):
     try:
         # 쿠키에서 userName 가져오기
         default_userName = request.cookies.get('userName')
-        userName = unquote(encoded_userName)
+        userName = unquote(default_userName)
         if not userName:
             return redirect('/login')  # 로그인되지 않은 경우 리다이렉트
 
@@ -563,7 +563,7 @@ def get_daily_dream(userName, year, month, day):
     try:
         # 쿠키에서 userName 가져오기
         default_userName = request.cookies.get('userName')
-        userName = unquote(encoded_userName)
+        userName = unquote(default_userName)
         if not userName:
             return redirect('/login')  # 로그인되지 않은 경우 리다이렉트
 
