@@ -102,11 +102,29 @@ document.addEventListener("DOMContentLoaded", () => {
                 window.location.href = result.redirect; // GET 요청으로 리디렉션
             } else {
                 console.error("리디렉션 URL이 없습니다.");
-                alert("리디렉션에 실패했습니다.");
+                // SweetAlert2로 에러 팝업 띄우기
+                Swal.fire({
+                    icon: 'error',
+                    title: '리디렉션 URL이 없습니다',
+                    text: '',
+                    confirmButtonText: '확인',
+                    customClass: {
+                        popup: 'swal-custom-popup'
+                    }
+                });
             }
         } catch (error) {
             console.error("POST 요청 실패:", error);
-            alert("서버 호출 중 오류가 발생했습니다.");
+            // SweetAlert2로 에러 팝업 띄우기
+            Swal.fire({
+                icon: 'error',
+                title: '서버 호출 중 오류 발생',
+                text: '',
+                confirmButtonText: '확인',
+                customClass: {
+                    popup: 'swal-custom-popup'
+                }
+            });
         }
     });
 });
