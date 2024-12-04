@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, redirect, url_for, send_from_directory, render_template, session, url_for, make_response
 from flask_mysqldb import MySQL
+from urllib.parse import quote, unquote
 import MySQLdb
 from datetime import datetime
 import os
@@ -165,7 +166,7 @@ def login():
         if result:
             userName = result['userName']
             response = jsonify({"success": f"로그인이 성공적으로 완료되었습니다! 어서오세요 {userName}님!"})
-            response.set_cookie('userName', userName, httponly=False)
+            response.set_cookie('userName', quote(userName), httponly=False)
             return response
         else:
             return jsonify({"error": "Invalid userId or password"}), 400
@@ -189,7 +190,8 @@ def create_dream(userName, year, month, day):
     try:
         print("===== POST 요청 수신 =====")
         # 쿠키에서 userName 가져오기
-        userName = request.cookies.get('userName')
+        default_userName = request.cookies.get('userName')
+        userName = unquote(encoded_userName)
         if not userName:
             return jsonify({"error": "No userName in cookies"}), 400
         print(f"userName: {userName}, year: {year}, month: {month}, day: {day}")
@@ -448,7 +450,8 @@ def get_monthly_calendar(year, month):
         year = int(year)
         month = int(month)
          # 쿠키에서 userName 가져오기
-        userName = request.cookies.get('userName')
+        default_userName = request.cookies.get('userName')
+        userName = unquote(encoded_userName)
         if not userName:
             return jsonify({"error": "User is not logged in"}), 401
         table_name = f"mydreamdiary_{userName}"  # 유저별 테이블
@@ -507,7 +510,8 @@ def get_monthly_calendar(year, month):
 def set_daily_dream(year, month, day):
     try:
         # 쿠키에서 userName 가져오기
-        userName = request.cookies.get('userName')
+        default_userName = request.cookies.get('userName')
+        userName = unquote(encoded_userName)
         if not userName:
             return redirect('/login')  # 로그인되지 않은 경우 리다이렉트
 
@@ -558,7 +562,8 @@ def set_daily_dream(year, month, day):
 def get_daily_dream(userName, year, month, day):
     try:
         # 쿠키에서 userName 가져오기
-        userName = request.cookies.get('userName')
+        default_userName = request.cookies.get('userName')
+        userName = unquote(encoded_userName)
         if not userName:
             return redirect('/login')  # 로그인되지 않은 경우 리다이렉트
 
