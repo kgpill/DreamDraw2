@@ -126,14 +126,41 @@
                 if (response.ok) {
                     // 서버에서 제공한 URL로 이동
                     window.location.href = "/";
-                    alert("성공적으로 저장되었습니다.");
+                    // SweetAlert2로 성공 팝업 띄우기
+                    Swal.fire({
+                        icon: 'success',
+                        title: '성공적으로 업로드 되었습니다.',
+                        text: '',
+                        confirmButtonText: '확인',
+                        customClass: {
+                            popup: 'swal-custom-popup'
+                        }
+                    });
                 } else {
                     console.error("서버 오류:", await response.text());
-                    alert("저장에 실패했습니다. 다시 시도해주세요.");
+                    // SweetAlert2로 에러 팝업 띄우기
+                    Swal.fire({
+                        icon: 'error',
+                        title: '저장에 실패했습니다. 다시 시도해주세요.',
+                        text: '',
+                        confirmButtonText: '확인',
+                        customClass: {
+                            popup: 'swal-custom-popup'
+                        }
+                    });
                 }
             } catch (error) {
                 console.error("저장 실패:", error);
-                alert("저장에 실패했습니다. 다시 시도해주세요.");
+                // SweetAlert2로 에러 팝업 띄우기
+                Swal.fire({
+                    icon: 'error',
+                    title: '저장에 실패했습니다. 다시 시도해주세요.',
+                    text: '',
+                    confirmButtonText: '확인',
+                    customClass: {
+                        popup: 'swal-custom-popup'
+                    }
+                });
             }
         });
     
@@ -149,14 +176,41 @@
                 if (response.ok) {
                     // 서버에서 제공한 URL로 이동
                     window.location.href = "/";
-                    alert("취소되었습니다.");
+                    // SweetAlert2로 에러 팝업 띄우기
+                    Swal.fire({
+                        icon: 'warning',
+                        title: '취소되었습니다.',
+                        text: '',
+                        confirmButtonText: '확인',
+                        customClass: {
+                            popup: 'swal-custom-popup'
+                        }
+                    });
                 } else {
                     console.error("서버 오류:", await response.text());
-                    alert("취소에 실패했습니다. 다시 시도해주세요.");
+                    // SweetAlert2로 에러 팝업 띄우기
+                    Swal.fire({
+                        icon: 'error',
+                        title: '취소에 실패했습니다. 다시 시도해주세요.',
+                        text: '',
+                        confirmButtonText: '확인',
+                        customClass: {
+                            popup: 'swal-custom-popup'
+                        }
+                    });
                 }
             } catch (error) {
                 console.error("취소 실패:", error);
-                alert("취소에 실패했습니다. 다시 시도해주세요.");
+                // SweetAlert2로 에러 팝업 띄우기
+                Swal.fire({
+                    icon: 'error',
+                    title: '취소에 실패했습니다. 다시 시도해주세요.',
+                    text: '',
+                    confirmButtonText: '확인',
+                    customClass: {
+                        popup: 'swal-custom-popup'
+                    }
+                });
             }
         });
     </script>
