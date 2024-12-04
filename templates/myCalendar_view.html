@@ -157,15 +157,19 @@
                 });
     
                 if (response.ok) {
-                    window.location.href = "/";
-                    // SweetAlert2로 성공 팝업 띄우기
+                   // SweetAlert2로 성공 팝업 띄우기
                     Swal.fire({
                         icon: 'success',
-                        title: '성공정으로 업로드 되었습니다',
+                        title: '성공적으로 다운로드 되었습니다.',
                         text: '',
                         confirmButtonText: '확인',
                         customClass: {
                             popup: 'swal-custom-popup'
+                        }
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // 확인 버튼 클릭 시 리디렉션
+                            window.location.href = "/";
                         }
                     });
                 } else {
