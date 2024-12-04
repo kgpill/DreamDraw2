@@ -66,7 +66,7 @@ signInButton.addEventListener("click", async () => {
     const { value: userId } = await Swal.fire({
         title: '아이디 입력',
         input: 'text',
-        inputLabel: '아이디를 입력하세요:',
+        inputLabel: '',
         inputPlaceholder: '아이디',
         showCancelButton: true,
         confirmButtonText: '다음',
@@ -96,7 +96,7 @@ signInButton.addEventListener("click", async () => {
     const { value: password } = await Swal.fire({
         title: '비밀번호 입력',
         input: 'password',
-        inputLabel: '비밀번호를 입력하세요:',
+        inputLabel: '',
         inputPlaceholder: '비밀번호',
         showCancelButton: true,
         confirmButtonText: '다음',
@@ -126,7 +126,7 @@ signInButton.addEventListener("click", async () => {
     const { value: userName } = await Swal.fire({
         title: '닉네임 입력',
         input: 'text',
-        inputLabel: '닉네임을 입력하세요:',
+        inputLabel: '',
         inputPlaceholder: '닉네임',
         showCancelButton: true,
         confirmButtonText: '완료',
@@ -210,7 +210,7 @@ signInButton.addEventListener("click", async () => {
     const { value: userId } = await Swal.fire({
         title: '아이디 입력',
         input: 'text',
-        inputLabel: '아이디를 입력하세요:',
+        inputLabel: '',
         inputPlaceholder: '아이디',
         showCancelButton: true,
         confirmButtonText: '다음',
@@ -239,7 +239,7 @@ signInButton.addEventListener("click", async () => {
     const { value: password } = await Swal.fire({
         title: '비밀번호 입력',
         input: 'password',
-        inputLabel: '비밀번호를 입력하세요:',
+        inputLabel: '',
         inputPlaceholder: '비밀번호',
         showCancelButton: true,
         confirmButtonText: '다음',
