@@ -90,7 +90,10 @@ def serve_index():
 @app.route('/signin', methods=['POST'])
 def signin():
     try:
-        data = request.json
+        # JSON 데이터 수동 디코딩
+        raw_data = request.data
+        data = json.loads(raw_data.decode('utf-8'))
+
         if not data:
             return jsonify({"error": "No data provided"}), 400
 
