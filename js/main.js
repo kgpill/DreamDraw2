@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // 회원가입
+     // 회원가입
 signInButton.addEventListener("click", async () => {
     // Step 1: Prompt for User ID
     const { value: userId } = await Swal.fire({
@@ -75,8 +75,20 @@ signInButton.addEventListener("click", async () => {
             if (!value) {
                 return '아이디를 입력해야 합니다!';
             }
+        },
+        didOpen: () => {
+            // 입력칸에 스타일 직접 적용
+            const inputElement = Swal.getInput(); // SweetAlert2 입력 요소 가져오기
+            if (inputElement) {
+                inputElement.style.textAlign = 'center'; // 텍스트 중앙 정렬
+                inputElement.style.margin = '0 auto';   // 입력칸 중앙 배치
+                inputElement.style.width = '80%';       // 입력칸 너비 조정
+                inputElement.style.padding = '10px';    // 입력칸 내부 여백
+                inputElement.style.fontSize = '16px';   // 입력 텍스트 크기
+            }
         }
     });
+    
 
     if (!userId) return; // User cancelled the prompt
 
@@ -93,7 +105,19 @@ signInButton.addEventListener("click", async () => {
             if (!value) {
                 return '비밀번호를 입력해야 합니다!';
             }
+        },
+        didOpen: () => {
+            // 입력칸에 스타일 직접 적용
+            const inputElement = Swal.getInput(); // SweetAlert2 입력 요소 가져오기
+            if (inputElement) {
+                inputElement.style.textAlign = 'center'; // 텍스트 중앙 정렬
+                inputElement.style.margin = '0 auto';   // 입력칸 중앙 배치
+                inputElement.style.width = '80%';       // 입력칸 너비 조정
+                inputElement.style.padding = '10px';    // 입력칸 내부 여백
+                inputElement.style.fontSize = '16px';   // 입력 텍스트 크기
+            }
         }
+        
     });
 
     if (!password) return; // User cancelled the prompt
@@ -110,6 +134,17 @@ signInButton.addEventListener("click", async () => {
         inputValidator: (value) => {
             if (!value) {
                 return '닉네임을 입력해야 합니다!';
+            }
+        },
+        didOpen: () => {
+            // 입력칸에 스타일 직접 적용
+            const inputElement = Swal.getInput(); // SweetAlert2 입력 요소 가져오기
+            if (inputElement) {
+                inputElement.style.textAlign = 'center'; // 텍스트 중앙 정렬
+                inputElement.style.margin = '0 auto';   // 입력칸 중앙 배치
+                inputElement.style.width = '80%';       // 입력칸 너비 조정
+                inputElement.style.padding = '10px';    // 입력칸 내부 여백
+                inputElement.style.fontSize = '16px';   // 입력 텍스트 크기
             }
         }
     });
@@ -185,8 +220,16 @@ signInButton.addEventListener("click", async () => {
                 return '아이디를 입력해야 합니다!';
             }
         },
-        customClass: {
-            popup: 'swal-custom-popup'
+        didOpen: () => {
+            // 입력칸에 스타일 직접 적용
+            const inputElement = Swal.getInput(); // SweetAlert2 입력 요소 가져오기
+            if (inputElement) {
+                inputElement.style.textAlign = 'center'; // 텍스트 중앙 정렬
+                inputElement.style.margin = '0 auto';   // 입력칸 중앙 배치
+                inputElement.style.width = '80%';       // 입력칸 너비 조정
+                inputElement.style.padding = '10px';    // 입력칸 내부 여백
+                inputElement.style.fontSize = '16px';   // 입력 텍스트 크기
+            }
         }
     });
 
@@ -206,8 +249,16 @@ signInButton.addEventListener("click", async () => {
                 return '비밀번호를 입력해야 합니다!';
             }
         },
-        customClass: {
-            popup: 'swal-custom-popup'
+        didOpen: () => {
+            // 입력칸에 스타일 직접 적용
+            const inputElement = Swal.getInput(); // SweetAlert2 입력 요소 가져오기
+            if (inputElement) {
+                inputElement.style.textAlign = 'center'; // 텍스트 중앙 정렬
+                inputElement.style.margin = '0 auto';   // 입력칸 중앙 배치
+                inputElement.style.width = '80%';       // 입력칸 너비 조정
+                inputElement.style.padding = '10px';    // 입력칸 내부 여백
+                inputElement.style.fontSize = '16px';   // 입력 텍스트 크기
+            }
         }
     });
 
