@@ -391,6 +391,12 @@ def save_dream(userName, year, month, day):
             # 이미지 파일 이동 (덮어쓰기 포함)
             if os.path.exists(new_image_path):
                 print(f"File already exists. Overwriting: {new_image_path}")
+        except OSError as e:
+            print(f"Error replacing file: {e}")
+            # Optionally handle the error, such as logging or raising it again
+        finally:
+            print("File operation attempted.")
+    
 
         os.replace(old_image_path, new_image_path)  # 파일 이동
         print(f"Image moved to {new_image_path}")
