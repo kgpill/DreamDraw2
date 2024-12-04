@@ -91,128 +91,133 @@
 
     <script>
         // 다운로드 버튼 클릭 이벤트
-        const downloadButton = document.getElementById("downloadButton");
-        downloadButton.addEventListener("click", async () => {
+const downloadButton = document.getElementById("downloadButton");
+downloadButton.addEventListener("click", async () => {
+    try {
+        const data = {
+            date: "{{ date }}",
+            imgPath: "{{ imgPath }}",
+            dreamCharacter: "{{ dreamCharacter }}",
+            time: "{{ time }}",
+            background: "{{ background }}",
+            mood: "{{ mood }}",
+            color: "{{ color }}",
+            act: "{{ act }}"
+        };
 
-            
-            try {
-                const data = {
-                    date: "{{ date }}",
-                    imgPath: "{{ imgPath }}",
-                    dreamCharacter: "{{ dreamCharacter }}",
-                    time: "{{ time }}",
-                    background: "{{ background }}",
-                    mood: "{{ mood }}",
-                    color: "{{ color }}",
-                    act: "{{ act }}"
-                };
-    
-                // API 요청 URL 생성
-                const userName = "{{ userName }}";
-                const year = "{{ date[:4] }}";
-                const month = "{{ date[4:6] }}";
-                const day = "{{ date[6:] }}";
-                const url = `/dreamDraw/save/${userName}/${year}/${month}/${day}`;
-    
-                // 서버로 POST 요청 전송
-                const response = await fetch(url, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(data),
-                });
-    
-                if (response.ok) {
-                    // 서버에서 제공한 URL로 이동
-                    window.location.href = "/";
-                    // SweetAlert2로 성공 팝업 띄우기
-                    Swal.fire({
-                        icon: 'success',
-                        title: '성공적으로 업로드 되었습니다.',
-                        text: '',
-                        confirmButtonText: '확인',
-                        customClass: {
-                            popup: 'swal-custom-popup'
-                        }
-                    });
-                } else {
-                    console.error("서버 오류:", await response.text());
-                    // SweetAlert2로 에러 팝업 띄우기
-                    Swal.fire({
-                        icon: 'error',
-                        title: '저장에 실패했습니다. 다시 시도해주세요.',
-                        text: '',
-                        confirmButtonText: '확인',
-                        customClass: {
-                            popup: 'swal-custom-popup'
-                        }
-                    });
+        // API 요청 URL 생성
+        const userName = "{{ userName }}";
+        const year = "{{ date[:4] }}";
+        const month = "{{ date[4:6] }}";
+        const day = "{{ date[6:] }}";
+        const url = `/dreamDraw/save/${userName}/${year}/${month}/${day}`;
+
+        // 서버로 POST 요청 전송
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
+
+        if (response.ok) {
+            // SweetAlert2로 성공 팝업 띄우기
+            Swal.fire({
+                icon: 'success',
+                title: '성공적으로 업로드 되었습니다.',
+                text: '',
+                confirmButtonText: '확인',
+                customClass: {
+                    popup: 'swal-custom-popup'
                 }
-            } catch (error) {
-                console.error("저장 실패:", error);
-                // SweetAlert2로 에러 팝업 띄우기
-                Swal.fire({
-                    icon: 'error',
-                    title: '저장에 실패했습니다. 다시 시도해주세요.',
-                    text: '',
-                    confirmButtonText: '확인',
-                    customClass: {
-                        popup: 'swal-custom-popup'
-                    }
-                });
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // 확인 버튼 클릭 시 리디렉션
+                    window.location.href = "/";
+                }
+            });
+        } else {
+            console.error("서버 오류:", await response.text());
+            // SweetAlert2로 에러 팝업 띄우기
+            Swal.fire({
+                icon: 'error',
+                title: '저장에 실패했습니다. 다시 시도해주세요.',
+                text: '',
+                confirmButtonText: '확인',
+                customClass: {
+                    popup: 'swal-custom-popup'
+                }
+            });
+        }
+    } catch (error) {
+        console.error("저장 실패:", error);
+        // SweetAlert2로 에러 팝업 띄우기
+        Swal.fire({
+            icon: 'error',
+            title: '저장에 실패했습니다. 다시 시도해주세요.',
+            text: '',
+            confirmButtonText: '확인',
+            customClass: {
+                popup: 'swal-custom-popup'
             }
         });
-    
-        // 닫기 버튼 이벤트
-        const closeButton = document.getElementById("closeButton");
-        closeButton.addEventListener("click", async () => {
-            try {
-                // 서버로 POST 요청 전송
-                const response = await fetch('/dreamDraw/result/cancel', {
-                    method: 'POST',
-                });
-    
-                if (response.ok) {
-                    // 서버에서 제공한 URL로 이동
-                    window.location.href = "/";
-                    // SweetAlert2로 에러 팝업 띄우기
-                    Swal.fire({
-                        icon: 'warning',
-                        title: '취소되었습니다.',
-                        text: '',
-                        confirmButtonText: '확인',
-                        customClass: {
-                            popup: 'swal-custom-popup'
-                        }
-                    });
-                } else {
-                    console.error("서버 오류:", await response.text());
-                    // SweetAlert2로 에러 팝업 띄우기
-                    Swal.fire({
-                        icon: 'error',
-                        title: '취소에 실패했습니다. 다시 시도해주세요.',
-                        text: '',
-                        confirmButtonText: '확인',
-                        customClass: {
-                            popup: 'swal-custom-popup'
-                        }
-                    });
+    }
+});
+
+// 닫기 버튼 이벤트
+const closeButton = document.getElementById("closeButton");
+closeButton.addEventListener("click", async () => {
+    try {
+        // 서버로 POST 요청 전송
+        const response = await fetch('/dreamDraw/result/cancel', {
+            method: 'POST',
+        });
+
+        if (response.ok) {
+            // SweetAlert2로 경고 팝업 띄우기
+            Swal.fire({
+                icon: 'warning',
+                title: '취소되었습니다.',
+                text: '',
+                confirmButtonText: '확인',
+                customClass: {
+                    popup: 'swal-custom-popup'
                 }
-            } catch (error) {
-                console.error("취소 실패:", error);
-                // SweetAlert2로 에러 팝업 띄우기
-                Swal.fire({
-                    icon: 'error',
-                    title: '취소에 실패했습니다. 다시 시도해주세요.',
-                    text: '',
-                    confirmButtonText: '확인',
-                    customClass: {
-                        popup: 'swal-custom-popup'
-                    }
-                });
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // 확인 버튼 클릭 시 리디렉션
+                    window.location.href = "/";
+                }
+            });
+        } else {
+            console.error("서버 오류:", await response.text());
+            // SweetAlert2로 에러 팝업 띄우기
+            Swal.fire({
+                icon: 'error',
+                title: '취소에 실패했습니다. 다시 시도해주세요.',
+                text: '',
+                confirmButtonText: '확인',
+                customClass: {
+                    popup: 'swal-custom-popup'
+                }
+            });
+        }
+    } catch (error) {
+        console.error("취소 실패:", error);
+        // SweetAlert2로 에러 팝업 띄우기
+        Swal.fire({
+            icon: 'error',
+            title: '취소에 실패했습니다. 다시 시도해주세요.',
+            text: '',
+            confirmButtonText: '확인',
+            customClass: {
+                popup: 'swal-custom-popup'
             }
         });
+    }
+});
+
     </script>
     
 </body>
