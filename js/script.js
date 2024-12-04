@@ -68,15 +68,22 @@ signInButton.addEventListener("click", async () => {
             }
         },
         didOpen: () => {
-            // 입력칸에 스타일 직접 적용
-            const inputElement = Swal.getInput(); // SweetAlert2 입력 요소 가져오기
-            if (inputElement) {
-                inputElement.style.textAlign = 'center'; // 텍스트 중앙 정렬
-                inputElement.style.margin = '0 auto';   // 입력칸 중앙 배치
-                inputElement.style.width = '80%';       // 입력칸 너비 조정
-                inputElement.style.padding = '10px';    // 입력칸 내부 여백
-                inputElement.style.fontSize = '16px';   // 입력 텍스트 크기
-            }
+             // 제목 스타일 변경
+        const titleElement = Swal.getTitle(); // SweetAlert2 제목 요소 가져오기
+        if (titleElement) {
+            titleElement.style.fontSize = '18px'; // 제목 글씨 크기 줄이기
+            titleElement.style.marginBottom = '15px'; // 제목과 입력칸 사이 간격 추가
+        }
+
+        // 입력칸 스타일 변경
+        const inputElement = Swal.getInput(); // SweetAlert2 입력 요소 가져오기
+        if (inputElement) {
+            inputElement.style.textAlign = 'center'; // 입력 텍스트 중앙 정렬
+            inputElement.style.marginTop = '10px';  // 텍스트와 입력칸 사이 간격
+            inputElement.style.width = '80%';       // 입력칸 너비 조정
+            inputElement.style.padding = '10px';    // 입력칸 내부 여백
+            inputElement.style.fontSize = '16px';   // 입력 텍스트 크기
+        }
         }
     });
     
@@ -98,15 +105,22 @@ signInButton.addEventListener("click", async () => {
             }
         },
         didOpen: () => {
-            // 입력칸에 스타일 직접 적용
-            const inputElement = Swal.getInput(); // SweetAlert2 입력 요소 가져오기
-            if (inputElement) {
-                inputElement.style.textAlign = 'center'; // 텍스트 중앙 정렬
-                inputElement.style.margin = '0 auto';   // 입력칸 중앙 배치
-                inputElement.style.width = '80%';       // 입력칸 너비 조정
-                inputElement.style.padding = '10px';    // 입력칸 내부 여백
-                inputElement.style.fontSize = '16px';   // 입력 텍스트 크기
-            }
+             // 제목 스타일 변경
+        const titleElement = Swal.getTitle(); // SweetAlert2 제목 요소 가져오기
+        if (titleElement) {
+            titleElement.style.fontSize = '18px'; // 제목 글씨 크기 줄이기
+            titleElement.style.marginBottom = '15px'; // 제목과 입력칸 사이 간격 추가
+        }
+
+        // 입력칸 스타일 변경
+        const inputElement = Swal.getInput(); // SweetAlert2 입력 요소 가져오기
+        if (inputElement) {
+            inputElement.style.textAlign = 'center'; // 입력 텍스트 중앙 정렬
+            inputElement.style.marginTop = '10px';  // 텍스트와 입력칸 사이 간격
+            inputElement.style.width = '80%';       // 입력칸 너비 조정
+            inputElement.style.padding = '10px';    // 입력칸 내부 여백
+            inputElement.style.fontSize = '16px';   // 입력 텍스트 크기
+        }
         }
         
     });
@@ -128,15 +142,22 @@ signInButton.addEventListener("click", async () => {
             }
         },
         didOpen: () => {
-            // 입력칸에 스타일 직접 적용
-            const inputElement = Swal.getInput(); // SweetAlert2 입력 요소 가져오기
-            if (inputElement) {
-                inputElement.style.textAlign = 'center'; // 텍스트 중앙 정렬
-                inputElement.style.margin = '0 auto';   // 입력칸 중앙 배치
-                inputElement.style.width = '80%';       // 입력칸 너비 조정
-                inputElement.style.padding = '10px';    // 입력칸 내부 여백
-                inputElement.style.fontSize = '16px';   // 입력 텍스트 크기
-            }
+            // 제목 스타일 변경
+        const titleElement = Swal.getTitle(); // SweetAlert2 제목 요소 가져오기
+        if (titleElement) {
+            titleElement.style.fontSize = '18px'; // 제목 글씨 크기 줄이기
+            titleElement.style.marginBottom = '15px'; // 제목과 입력칸 사이 간격 추가
+        }
+
+        // 입력칸 스타일 변경
+        const inputElement = Swal.getInput(); // SweetAlert2 입력 요소 가져오기
+        if (inputElement) {
+            inputElement.style.textAlign = 'center'; // 입력 텍스트 중앙 정렬
+            inputElement.style.marginTop = '10px';  // 텍스트와 입력칸 사이 간격
+            inputElement.style.width = '80%';       // 입력칸 너비 조정
+            inputElement.style.padding = '10px';    // 입력칸 내부 여백
+            inputElement.style.fontSize = '16px';   // 입력 텍스트 크기
+        }
         }
     });
 
@@ -212,15 +233,22 @@ signInButton.addEventListener("click", async () => {
             }
         },
         didOpen: () => {
-            // 입력칸에 스타일 직접 적용
-            const inputElement = Swal.getInput(); // SweetAlert2 입력 요소 가져오기
-            if (inputElement) {
-                inputElement.style.textAlign = 'center'; // 텍스트 중앙 정렬
-                inputElement.style.margin = '0 auto';   // 입력칸 중앙 배치
-                inputElement.style.width = '80%';       // 입력칸 너비 조정
-                inputElement.style.padding = '10px';    // 입력칸 내부 여백
-                inputElement.style.fontSize = '16px';   // 입력 텍스트 크기
-            }
+            // 제목 스타일 변경
+        const titleElement = Swal.getTitle(); // SweetAlert2 제목 요소 가져오기
+        if (titleElement) {
+            titleElement.style.fontSize = '18px'; // 제목 글씨 크기 줄이기
+            titleElement.style.marginBottom = '15px'; // 제목과 입력칸 사이 간격 추가
+        }
+
+        // 입력칸 스타일 변경
+        const inputElement = Swal.getInput(); // SweetAlert2 입력 요소 가져오기
+        if (inputElement) {
+            inputElement.style.textAlign = 'center'; // 입력 텍스트 중앙 정렬
+            inputElement.style.marginTop = '10px';  // 텍스트와 입력칸 사이 간격
+            inputElement.style.width = '80%';       // 입력칸 너비 조정
+            inputElement.style.padding = '10px';    // 입력칸 내부 여백
+            inputElement.style.fontSize = '16px';   // 입력 텍스트 크기
+        }
         }
     });
 
@@ -241,15 +269,22 @@ signInButton.addEventListener("click", async () => {
             }
         },
         didOpen: () => {
-            // 입력칸에 스타일 직접 적용
-            const inputElement = Swal.getInput(); // SweetAlert2 입력 요소 가져오기
-            if (inputElement) {
-                inputElement.style.textAlign = 'center'; // 텍스트 중앙 정렬
-                inputElement.style.margin = '0 auto';   // 입력칸 중앙 배치
-                inputElement.style.width = '80%';       // 입력칸 너비 조정
-                inputElement.style.padding = '10px';    // 입력칸 내부 여백
-                inputElement.style.fontSize = '16px';   // 입력 텍스트 크기
-            }
+            // 제목 스타일 변경
+        const titleElement = Swal.getTitle(); // SweetAlert2 제목 요소 가져오기
+        if (titleElement) {
+            titleElement.style.fontSize = '18px'; // 제목 글씨 크기 줄이기
+            titleElement.style.marginBottom = '15px'; // 제목과 입력칸 사이 간격 추가
+        }
+
+        // 입력칸 스타일 변경
+        const inputElement = Swal.getInput(); // SweetAlert2 입력 요소 가져오기
+        if (inputElement) {
+            inputElement.style.textAlign = 'center'; // 입력 텍스트 중앙 정렬
+            inputElement.style.marginTop = '10px';  // 텍스트와 입력칸 사이 간격
+            inputElement.style.width = '80%';       // 입력칸 너비 조정
+            inputElement.style.padding = '10px';    // 입력칸 내부 여백
+            inputElement.style.fontSize = '16px';   // 입력 텍스트 크기
+        }
         }
     });
 
